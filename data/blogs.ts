@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     publishedAt: "April 12, 2026",
     author: "Dr. Meera Khanna",
-    image: photoLibrary.journalingCozy,
+    image: photoLibrary.blogMorning,
     heroTag: "Daily rituals",
     content: [
       {
@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     publishedAt: "April 8, 2026",
     author: "Ananya Bose",
-    image: photoLibrary.therapyConsultation,
+    image: photoLibrary.blogBoundaries,
     heroTag: "Relationships",
     content: [
       {
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     publishedAt: "April 3, 2026",
     author: "Dr. Rhea Menon",
-    image: photoLibrary.deskLaptop,
+    image: photoLibrary.blogSleep,
     heroTag: "Sleep health",
     content: [
       {
@@ -133,7 +133,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     publishedAt: "March 28, 2026",
     author: "Kabir Shah",
-    image: photoLibrary.planningLaptop,
+    image: photoLibrary.blogBurnout,
     heroTag: "Work life",
     content: [
       {

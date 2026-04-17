@@ -11,6 +11,8 @@ export const photoLibrary = {
   // Workshops — intimate group in a warm, plant-filled space
   workshopGroup:
     "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=85",
+  // Workshop hero — user's custom local image
+  workshopHero: "/images/workshop.png",
   // Desk — person thoughtfully at laptop in soft home light
   deskLaptop:
     "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1400&q=85",
@@ -51,5 +53,35 @@ export const photoLibrary = {
     "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1400&q=85",
   // Personalized care — person journaling/planning in a cozy warm personal space
   cozyCare:
-    "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=85"
+    "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=85",
+  // Book Session hero — therapist holding patient's hands, warm human connection
+  therapistHands: "/images/therapy.png",
+
+  // ── Blog emotion-specific images ──────────────────────────────────
+  // Morning routine — soft morning window light, cup of tea, gentle calm
+  blogMorning:
+    "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1400&q=85",
+  // Boundaries & guilt — two people in a tense but civil conversation, looking at each other
+  blogBoundaries:
+    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=85",
+  // Sleep & burnout recovery — person lying in a dark room, still, resting
+  blogSleep:
+    "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=1400&q=85",
+  // Burnout recognition — person sitting alone, withdrawn, staring into distance (numbness/disconnection)
+  blogBurnout:
+    "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?auto=format&fit=crop&w=1400&q=85",
+
+  // ── Workshop emotion-specific images ──────────────────────────────
+  // Anxiety workshop — tightly clasped hands, visible tension, anxious posture
+  workshopAnxiety:
+    "https://images.unsplash.com/photo-1621252179027-94459d278660?auto=format&fit=crop&w=1400&q=85",
+  // Burnout / rest workshop — person with eyes closed, resting peacefully
+  workshopRest:
+    "https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=1400&q=85",
+  // Boundaries / relationships workshop — two people facing each other in gentle conversation
+  workshopRelationships:
+    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=85",
+  // Sleep reset workshop — dark bedroom, moonlight, quiet night scene
+  workshopSleep:
+    "https://images.unsplash.com/photo-1531353826977-0941b4779a1c?auto=format&fit=crop&w=1400&q=85",
 } as const;

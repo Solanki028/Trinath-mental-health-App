@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils";
 type BrandLogoProps = {
   className?: string;
   href?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   textClassName?: string;
   /** Show on dark backgrounds (inverts text color) */
   dark?: boolean;
 };
 
-const imageSizes = { sm: 30, md: 38, lg: 48 } as const;
+const imageSizes = { sm: 30, md: 38, lg: 48, xl: 56 } as const;
 
 export function BrandLogo({
   className,
@@ -38,7 +38,7 @@ export function BrandLogo({
       {/* ── Brand name ── */}
       <span
         className={cn(
-          "text-sm font-semibold tracking-wide",
+          size === "xl" ? "text-base font-bold tracking-wide" : "text-sm font-semibold tracking-wide",
           dark ? "text-white" : "text-foreground",
           textClassName
         )}

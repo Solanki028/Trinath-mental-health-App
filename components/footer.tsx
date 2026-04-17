@@ -54,7 +54,7 @@ export function Footer() {
 
               {/* Brand */}
               <div className="max-w-xs space-y-4">
-                <BrandLogo size="md" dark />
+                <BrandLogo size="xl" dark />
                 <p className="text-sm leading-relaxed text-white/60">
                   Warm, professional mental health care — online and in-person across India.
                 </p>

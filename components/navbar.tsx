@@ -37,7 +37,7 @@ export function Navbar() {
         >
           {/* Logo */}
           <div onClick={() => setIsOpen(false)}>
-            <BrandLogo size="md" />
+            <BrandLogo size="xl" />
           </div>
 
           {/* Desktop nav */}

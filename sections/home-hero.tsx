@@ -13,9 +13,9 @@ const HEADLINE_BTM = "to mental wellness.";
 
 export function HomeHero() {
   return (
-    <section className="relative min-h-[92vh] overflow-hidden" style={bg.dark}>
-      {/* ── Full-bleed background image — properly visible ── */}
-      <div className="absolute inset-0">
+    <section className="relative min-h-screen" style={bg.dark}>
+      {/* ── Background image ── */}
+      <div className="absolute inset-0 overflow-hidden">
         <Image
           src={photoLibrary.therapyConsultation}
           alt="A warm, supportive therapy session"
@@ -25,7 +25,6 @@ export function HomeHero() {
           style={{ opacity: imageOpacity.hero }}
           priority
         />
-        {/* Soft gradient — lets the image breathe while keeping text readable */}
         <div className="absolute inset-0" style={{ background: overlays.heroVertical }} />
         <div className="absolute inset-0" style={{ background: overlays.heroHorizontal }} />
       </div>
@@ -40,22 +39,19 @@ export function HomeHero() {
       />
 
       {/* ── Content ── */}
-      <div
-        className="relative mx-auto flex max-w-7xl flex-col justify-end px-4 pb-16 pt-16 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24"
-        style={{ minHeight: "inherit" }}
-      >
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-4 pb-52 pt-20 sm:px-6 lg:px-8" style={{ minHeight: "inherit" }}>
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
           className="max-w-3xl space-y-6"
         >
-          {/* Eyebrow */}
+          {/* Eyebrow pill */}
           <motion.div
             variants={fadeUp}
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-sm"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-white/60 animate-pulse-soft" />
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white/60" />
             <span className="text-xs font-semibold uppercase tracking-[0.26em] text-white/80">
               Trinath Counselling Services
             </span>
@@ -63,10 +59,7 @@ export function HomeHero() {
 
           {/* Headline */}
           <motion.h1
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.04 } }
-            }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.04 } } }}
             className="text-[clamp(3rem,8vw,6rem)] font-bold leading-[1.02] tracking-tight text-white"
           >
             {[...HEADLINE_TOP.split(" "), "\n", ...HEADLINE_BTM.split(" ")].map((word, i) =>
@@ -77,16 +70,11 @@ export function HomeHero() {
                   key={i}
                   variants={{
                     hidden: { opacity: 0, y: 40, filter: "blur(6px)" },
-                    visible: {
-                      opacity: 1, y: 0, filter: "blur(0px)",
-                      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-                    }
+                    visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
                   }}
                   className="mr-[0.22em] inline-block"
                 >
-                  {word === "wellness." ? (
-                    <span className="italic" style={text.gold}>{word}</span>
-                  ) : word}
+                  {word === "wellness." ? <span className="italic" style={text.gold}>{word}</span> : word}
                 </motion.span>
               )
             )}
@@ -126,40 +114,34 @@ export function HomeHero() {
               Explore workshops
             </Link>
           </motion.div>
-        </motion.div>
 
-        {/* ── Stat pills ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-12 flex flex-wrap gap-3"
-        >
-          {[
-            { value: "18k+", label: "Care journeys" },
-            { value: "92%",  label: "Feel more supported" },
-            { value: "4.9★", label: "Satisfaction" }
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-2.5 backdrop-blur-md"
-            >
-              <span className="text-lg font-bold" style={text.gold}>{stat.value}</span>
-              <span className="text-xs text-white/60">{stat.label}</span>
-            </div>
-          ))}
+          {/* Tag strip */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { duration: 0.5, delay: 0.9 } }
+            }}
+            className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs text-white/50"
+          >
+            {["For Every Age & Concern", "In-person & Online", "For Individuals, Families & Organisations"].map((tag, i) => (
+              <span key={tag} className="flex items-center gap-2">
+                {i > 0 && <span className="h-1 w-1 rounded-full bg-white/30" />}
+                {tag}
+              </span>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
 
       {/* ── Scroll indicator ── */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-6 right-8 hidden flex-col items-center gap-1.5 lg:flex"
         animate={{ y: [0, 6, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
         <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/40">Scroll</span>
         <div className="h-6 w-px bg-gradient-to-b from-white/40 to-transparent" />
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

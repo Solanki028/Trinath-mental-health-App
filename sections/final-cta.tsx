@@ -1,46 +1,94 @@
-import Image from "next/image";
+"use client";
 
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
 import { photoLibrary } from "@/data/photos";
+import { staggerContainer, fadeUp } from "@/lib/animations";
+import { bg, text, overlays, imageOpacity } from "@/lib/theme";
+
+const trustBadges = ["No commitment", "Cancel anytime", "Private & secure", "Same-week availability"];
 
 export function FinalCta() {
   return (
-    <section className="px-4 pb-20 sm:px-6 lg:px-8 lg:pb-24">
-      <div className="mx-auto max-w-7xl rounded-[38px] border border-white/70 bg-white/75 px-6 py-10 shadow-soft backdrop-blur-xl sm:px-10 sm:py-14">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_320px] lg:items-end">
-          <div>
-            <p className="text-sm uppercase tracking-[0.22em] text-muted-foreground">
+    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28" style={bg.warm}>
+      {/* ── Background image ── */}
+      <div className="absolute inset-0">
+        <Image
+          src={photoLibrary.readingCorner}
+          alt="Calm reflective moment"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          style={{ opacity: imageOpacity.cta }}
+        />
+        <div className="absolute inset-0" style={{ background: overlays.ctaHorizontal }} />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="space-y-7"
+          >
+            <motion.span variants={fadeUp} className="block text-xs font-bold uppercase tracking-[0.26em]" style={text.gold}>
               Start your journey
-            </p>
-            <h2 className="mt-4 max-w-2xl text-3xl leading-tight sm:text-4xl lg:text-[3.2rem]">
-              Choose a path and start with less friction.
-            </h2>
-            <p className="mt-4 max-w-xl text-base">
-              Explore, read, join, or book. The UI stays calm across every page.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/book-session" size="lg">
-                Start with a session
-              </Button>
-              <Button href="/blogs" variant="secondary" size="lg">
+            </motion.span>
+
+            <motion.h2
+              variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] } } }}
+              className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
+            >
+              Take the first step
+              <br />
+              <span className="italic" style={text.gold}>toward feeling better.</span>
+            </motion.h2>
+
+            <motion.p
+              variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, delay: 0.22 } } }}
+              className="text-base text-white/65"
+            >
+              No waiting rooms. No awkward introductions. Just a calm space where care starts on your terms.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              variants={{ hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, delay: 0.38 } } }}
+              className="flex flex-wrap gap-4"
+            >
+              <Link
+                href="/book-session"
+                className="group inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
+                style={bg.gold}
+              >
+                Book a session
+                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </Link>
+              <Link
+                href="/blogs"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
+              >
                 Read the journal
-              </Button>
-            </div>
-          </div>
-          <div className="relative overflow-hidden rounded-[30px] border border-white/80 bg-white shadow-soft">
-            <Image
-              src={photoLibrary.readingCorner}
-              alt="Calm reflective moment"
-              width={900}
-              height={760}
-              className="h-auto w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-6">
-              <p className="text-xs uppercase tracking-[0.18em] text-white/80">Calm first</p>
-              <p className="mt-2 max-w-xs text-2xl text-white">Support that feels quieter from the start.</p>
-            </div>
-          </div>
+              </Link>
+            </motion.div>
+
+            {/* Trust badges */}
+            <motion.div
+              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.5, delay: 0.55 } } }}
+              className="flex flex-wrap gap-3"
+            >
+              {trustBadges.map((badge) => (
+                <span key={badge} className="flex items-center gap-2 text-xs text-white/45">
+                  <span className="h-1 w-1 rounded-full" style={{ backgroundColor: "rgba(212,148,58,0.7)" }} />
+                  {badge}
+                </span>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

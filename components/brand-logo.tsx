@@ -8,33 +8,46 @@ type BrandLogoProps = {
   href?: string;
   size?: "sm" | "md" | "lg";
   textClassName?: string;
+  /** Show on dark backgrounds (inverts text color) */
+  dark?: boolean;
 };
+
+const imageSizes = { sm: 30, md: 38, lg: 48 } as const;
 
 export function BrandLogo({
   className,
   href = "/",
   size = "md",
-  textClassName
+  textClassName,
+  dark = false
 }: BrandLogoProps) {
-  const imageSize = size === "sm" ? 46 : size === "lg" ? 72 : 58;
+  const px = imageSizes[size];
 
   return (
-    <Link href={href} className={cn("flex items-center gap-3", className)}>
-      <div className="overflow-hidden rounded-2xl border border-brand/10 bg-white shadow-soft">
+    <Link href={href} className={cn("flex items-center gap-2", className)}>
+      {/* ── Circular logo mark ── */}
+      <div className="overflow-hidden rounded-full border border-white/20 shadow-sm" style={{ width: px, height: px, flexShrink: 0 }}>
         <Image
           src="/images/app-logo.jpg"
-          alt="Trinath Counselling Services logo"
-          width={imageSize}
-          height={imageSize}
-          className="h-auto w-auto object-contain"
+          alt="Trinath logo"
+          width={px}
+          height={px}
+          className="h-full w-full object-cover"
         />
       </div>
-      <div className={cn("min-w-0", textClassName)}>
-        <p className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground">
-          Trinath Counselling
-        </p>
-        <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Services</p>
-      </div>
+      {/* ── Brand name ── */}
+      <span
+        className={cn(
+          "text-sm font-semibold tracking-wide",
+          dark ? "text-white" : "text-foreground",
+          textClassName
+        )}
+      >
+        Trinath
+        <span className={cn("ml-1 font-normal", dark ? "text-white/60" : "text-muted-foreground")}>
+          Counselling
+        </span>
+      </span>
     </Link>
   );
 }

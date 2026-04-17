@@ -2,7 +2,7 @@ import { photoLibrary } from "@/data/photos";
 
 export const navItems = [
   { href: "/", label: "Home" },
-  { href: "/blogs", label: "Journal" },
+  { href: "/blogs", label: "Articles" },
   { href: "/workshops", label: "Workshops" },
   { href: "/book-session", label: "Book Session" }
 ];

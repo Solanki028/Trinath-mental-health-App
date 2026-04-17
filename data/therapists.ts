@@ -1,9 +1,8 @@
-import { photoLibrary } from "@/data/photos";
-
 export type Therapist = {
   id: string;
   name: string;
   specialty: string;
+  qualification: string;
   focus: string[];
   experience: string;
   availability: string;
@@ -12,39 +11,47 @@ export type Therapist = {
 
 export const therapists: Therapist[] = [
   {
-    id: "meera-khanna",
-    name: "Dr. Meera Khanna",
-    specialty: "Therapist",
-    focus: ["Anxiety", "Life transitions", "Self-worth"],
-    experience: "9 years experience",
-    availability: "Next available today",
-    image: photoLibrary.portraitWomanOne
+    id: "dr-priya-sharma",
+    name: "Dr. Priya Sharma",
+    specialty: "Clinical Psychologist",
+    qualification: "M.Phil, PhD – NIMHANS",
+    focus: ["Anxiety", "Depression", "CBT"],
+    experience: "12 years experience",
+    availability: "Available today",
+    // Indian woman doctor in professional attire, warm expression
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&h=800&q=85"
   },
   {
-    id: "rhea-menon",
-    name: "Dr. Rhea Menon",
+    id: "dr-arjun-nair",
+    name: "Dr. Arjun Nair",
     specialty: "Psychiatrist",
-    focus: ["Sleep care", "Mood support", "Medication review"],
-    experience: "11 years experience",
-    availability: "Next available tomorrow",
-    image: photoLibrary.portraitWomanTwo
+    qualification: "MBBS, MD Psychiatry – AIIMS",
+    focus: ["Mood disorders", "Medication", "OCD"],
+    experience: "14 years experience",
+    availability: "Available tomorrow",
+    // South Asian male professional doctor
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&h=800&q=85"
   },
   {
-    id: "ananya-bose",
-    name: "Ananya Bose",
+    id: "dr-kavitha-rao",
+    name: "Dr. Kavitha Rao",
     specialty: "Therapist",
-    focus: ["Relationships", "Burnout", "Boundaries"],
-    experience: "7 years experience",
-    availability: "Next available in 2 days",
-    image: photoLibrary.portraitWomanThree
+    qualification: "MA Psychology – Bangalore University",
+    focus: ["Relationships", "Grief", "Trauma"],
+    experience: "9 years experience",
+    availability: "Available in 2 days",
+    // Indian professional woman, warm and approachable
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&h=800&q=85"
   },
   {
-    id: "kabir-shah",
-    name: "Kabir Shah",
-    specialty: "Wellness coach",
-    focus: ["Habits", "Stress regulation", "Work-life balance"],
-    experience: "6 years experience",
-    availability: "Next available Thursday",
-    image: photoLibrary.portraitManOne
+    id: "rahul-mehta",
+    name: "Rahul Mehta",
+    specialty: "Wellness Coach",
+    qualification: "MSc Counselling – Tata Institute",
+    focus: ["Burnout", "Stress", "Work-life balance"],
+    experience: "8 years experience",
+    availability: "Available Thursday",
+    // South Asian male, professional and confident
+    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&h=800&q=85"
   }
 ];

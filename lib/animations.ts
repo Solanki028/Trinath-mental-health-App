@@ -91,6 +91,16 @@ export const staggerContainerFast: Variants = {
   }
 };
 
+export const staggerContainerSlow: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.35,
+      delayChildren: 0.1
+    }
+  }
+};
+
 // ─── Word / Character Stagger ─────────────────────────────────────
 
 export const wordReveal: Variants = {

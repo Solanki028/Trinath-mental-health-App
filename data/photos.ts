@@ -84,4 +84,7 @@ export const photoLibrary = {
   // Sleep reset workshop — dark bedroom, moonlight, quiet night scene
   workshopSleep:
     "https://images.unsplash.com/photo-1531353826977-0941b4779a1c?auto=format&fit=crop&w=1400&q=85",
+  // Indian therapy session — warm 1-on-1 consultation
+  indianTherapySession:
+    "https://images.unsplash.com/photo-1698047682091-782b1e5c6536?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 } as const;

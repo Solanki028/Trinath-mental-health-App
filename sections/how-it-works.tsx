@@ -72,7 +72,7 @@ export function HowItWorks() {
               <span className="italic" style={text.forest}>to feeling supported.</span>
             </motion.h2>
 
-            <StaggerWrapper className="mt-10 space-y-0 divide-y divide-line/60">
+            <StaggerWrapper className="mt-10 space-y-0 divide-y divide-line/60" staggerDelay={0.35}>
               {careSteps.map((item) => (
                 <motion.div key={item.step} variants={fadeUp} className="group flex gap-6 py-7">
                   <div

@@ -26,8 +26,8 @@ export function OfflineSection() {
     offset: ["start end", "end start"]
   });
 
-  // Subtle parallax on the image — moves slower than scroll
-  const rawY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
+  // Refined parallax for lower scale — moves slower to avoid edge gaps
+  const rawY = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
   const y = useSpring(rawY, { stiffness: 55, damping: 22 });
 
   return (
@@ -67,16 +67,16 @@ export function OfflineSection() {
           <div
             ref={imageRef}
             className="relative mx-auto mb-14 overflow-hidden rounded-[32px] shadow-[0_24px_72px_rgba(0,0,0,0.18)]"
-            style={{ height: 480 }}
+            style={{ height: 600 }}
           >
             {/* Parallax image layer */}
             <motion.div
               className="absolute inset-0"
-              style={{ y, scale: 1.14 }}
+              style={{ y, scale: 1.1 }}
             >
               <Image
-                src={photoLibrary.officeLobby}
-                alt="Our calm, welcoming in-person centre in Hyderabad"
+                src={photoLibrary.indianTherapySession}
+                alt="A warm, supportive in-person therapy session with an expert in Hyderabad"
                 fill
                 sizes="(min-width: 1280px) 1200px, 95vw"
                 className="object-cover object-center"

@@ -4,6 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { BlogsExplorer } from "@/components/blogs-explorer";
 import { Card } from "@/components/ui/card";
 import { blogPosts } from "@/data/blogs";
+import { SubpageBranding } from "@/sections/subpage-branding";
 
 export default function BlogsPage() {
   return (
@@ -65,6 +66,7 @@ export default function BlogsPage() {
         </div>
       </section>
       <BlogsExplorer />
+      <SubpageBranding />
     </>
   );
 }

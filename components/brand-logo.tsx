@@ -12,7 +12,7 @@ type BrandLogoProps = {
   dark?: boolean;
 };
 
-const imageSizes = { sm: 30, md: 38, lg: 48, xl: 56 } as const;
+const imageSizes = { sm: 36, md: 46, lg: 58, xl: 72 } as const;
 
 export function BrandLogo({
   className,
@@ -26,13 +26,13 @@ export function BrandLogo({
   return (
     <Link href={href} className={cn("flex items-center gap-2", className)}>
       {/* ── Circular logo mark ── */}
-      <div className="overflow-hidden rounded-full border border-white/20 shadow-sm" style={{ width: px, height: px, flexShrink: 0 }}>
+      <div className="overflow-hidden rounded-full flex-shrink-0 bg-white" style={{ width: px, height: px }}>
         <Image
           src="/images/app-logo.jpg"
           alt="Trinath logo"
           width={px}
           height={px}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain p-1"
         />
       </div>
       {/* ── Brand name ── */}

@@ -9,7 +9,7 @@ import { navItems } from "@/data/site";
 import { photoLibrary } from "@/data/photos";
 
 export function Footer() {
-  return (
+  return (  
     <footer className="relative overflow-hidden">
 
       {/* ── Curvy wave top edge ── */}

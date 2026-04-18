@@ -90,7 +90,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.98 }}
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="mx-0 mt-2 overflow-hidden rounded-[22px] border border-black/6 bg-white/97 shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl"
+              className="mx-0 mt-2 overflow-hidden rounded-[22px] border border-white/10 bg-forest shadow-[0_12px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl"
             >
               <nav className="flex flex-col gap-0.5 p-2.5">
                 {navItems.map((item) => (
@@ -101,8 +101,8 @@ export function Navbar() {
                     className={cn(
                       "rounded-xl px-4 py-2.5 text-sm font-medium transition-colors",
                       isActivePath(item.href)
-                        ? "bg-[#1c2e22]/8 text-[#1c2e22] font-semibold"
-                        : "text-foreground/70 hover:bg-foreground/5 hover:text-foreground"
+                        ? "bg-white/10 text-white font-semibold"
+                        : "text-white/70 hover:bg-white/10 hover:text-white"
                     )}
                   >
                     {item.label}
@@ -111,7 +111,7 @@ export function Navbar() {
                 <Link
                   href="/book-session"
                   onClick={() => setIsOpen(false)}
-                  className="mt-1 rounded-xl bg-[#1c2e22] px-4 py-2.5 text-center text-sm font-semibold text-white"
+                  className="mt-1 rounded-xl bg-white px-4 py-2.5 text-center text-sm font-semibold text-forest shadow-sm active:scale-[0.98] transition-transform"
                 >
                   Book a session
                 </Link>

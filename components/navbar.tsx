@@ -33,7 +33,7 @@ export function Navbar() {
             : { boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }
           }
           transition={{ duration: 0.3 }}
-          className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-black/8 bg-white/95 px-4 py-2.5 backdrop-blur-xl sm:px-6"
+          className="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-black/8 bg-white/95 px-4 py-1.5 backdrop-blur-xl sm:px-6"
         >
           {/* Logo */}
           <div onClick={() => setIsOpen(false)}>

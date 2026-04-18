@@ -12,7 +12,7 @@ type BrandLogoProps = {
   dark?: boolean;
 };
 
-const imageSizes = { sm: 36, md: 46, lg: 58, xl: 72 } as const;
+const imageSizes = { sm: 36, md: 46, lg: 58, xl: 64 } as const;
 
 export function BrandLogo({
   className,

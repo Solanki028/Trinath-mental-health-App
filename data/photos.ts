@@ -60,16 +60,16 @@ export const photoLibrary = {
   // ── Blog emotion-specific images ──────────────────────────────────
   // Morning routine — soft morning window light, cup of tea, gentle calm
   blogMorning:
-    "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1603813963559-7839472e067b?q=80&w=1232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   // Boundaries & guilt — two people in a tense but civil conversation, looking at each other
   blogBoundaries:
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1581740013982-13d788c3bf83?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   // Sleep & burnout recovery — person lying in a dark room, still, resting
   blogSleep:
     "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=1400&q=85",
   // Burnout recognition — person sitting alone, withdrawn, staring into distance (numbness/disconnection)
   blogBurnout:
-    "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1758874574397-e56dfcfc116d?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
   // ── Workshop emotion-specific images ──────────────────────────────
   // Anxiety workshop — tightly clasped hands, visible tension, anxious posture
